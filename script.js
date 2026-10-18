@@ -54,10 +54,9 @@ taskInput.focus();
 
 //function for progree bar
 function updateProgress() {
-    const checkbox = taskList.querySelectorAll('input[type="checkbox"]');
-    const totalTasks = checkbox.length;
+    const totalTasks = taskList.querySelectorAll('input[type="checkbox"]').length;
     const completedTasks = taskList.querySelectorAll('input[type="checkbox"]:checked').length;
     const percent = totalTasks === 0 ? 0 : (completedTasks / totalTasks) * 100;
-    taskProgress.textContent = `${Math.round(percent)}% completed`;
-    progressBar.style.width = `${percent}%`;
+    taskProgress.textContent = "Tasks: " + completedTasks + "/" + totalTasks;
+    progressBar.value = percent;
 }

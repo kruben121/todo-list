@@ -4,13 +4,73 @@ beige: fefaf3
 green: b8cfb3
 dk green: 84a282
 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --background:var(--beige);
+    --pink: #f6e2e9;
+    --beige: #fefaf3;
+    --green: #b8cfb3;
+    --dk-green: #84a282;
+    --text:var(--dk-green);
+}
 body {
-    background-color: #fefaf3;
+    background-color: var(--background);
     text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    max-width: 500px;
+}
+.details {
+    width: 100%;
+}
+.stats-container {
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid var(--pink);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width:100%;
+}
+
+#progress-bar {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: beige ;
     color: #84a282;
+    border: 2px solid #84a282;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+
+}
+
+
+#numbers {
+    width: 50px;
+    height: 50px;
+    background-color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
 }
 
 #task-form {
@@ -25,7 +85,6 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 10px;
     background-color: #b8cfb3;
-    border: 1px solid #84a282;
     padding: 20px;
     border-radius: 5px;
 }
@@ -35,19 +94,20 @@ h1, h2, h3, h4, h5, h6 {
     color: #84a282;
 }
 
-#progress-bar {
-    display: block;
-    width: 100%;
-    background-color: #84a282;
-    height: 16px;
-    border: 2px solid #84a282;
-    border-radius: 20px;
-    overflow: hidden;
-}
+
+
 
 .progress-container {
     border: 2px solid #84a282;
     border-radius: 20px;
     padding: 5px;
     margin-bottom: 20px;
+}
+
+
+
+#task-list input[type="checkbox"]:checked {
+    width: 10px;
+    height: 10px;
+    accent-color: #f6e2e9;
 }
