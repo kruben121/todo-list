@@ -6,6 +6,7 @@ dk green: 84a282
 */
 body {
     background-color: #fefaf3;
+    text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,4 +33,12 @@ h1, h2, h3, h4, h5, h6 {
 .completed {
     text-decoration: line-through;
     color: #84a282;
+}
+
+#progress-bar {
+    display: block;
+    width: 100%;
+    background-color: #84a282;
+    height: 20px;
+    border-radius: 5px;
 }

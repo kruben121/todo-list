@@ -2,6 +2,7 @@ const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
 const taskList = document.getElementById('task-list');
 const taskProgress = document.getElementById('task-progress');
+const progressBar = document.getElementById('progress-bar');
 
 
 
@@ -58,4 +59,5 @@ function updateProgress() {
     const completedTasks = taskList.querySelectorAll('input[type="checkbox"]:checked').length;
     const percent = totalTasks === 0 ? 0 : (completedTasks / totalTasks) * 100;
     taskProgress.textContent = `${Math.round(percent)}% completed`;
+    progressBar.style.width = `${percent}%`;
 }
