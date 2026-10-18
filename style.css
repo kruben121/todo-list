@@ -18,3 +18,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     border-radius: 5px;
 }
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #b8cfb3;
+    border: 1px solid #84a282;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #84a282;
+}
