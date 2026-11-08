@@ -13,11 +13,13 @@ dk green: 84a282
 :root {
     --background:var(--beige);
     --pink: #f6e2e9;
+    --dark-pink: #e47ea2;
     --beige: #fefaf3;
     --green: #b8cfb3;
     --dk-green: #84a282;
     --text:var(--dk-green);
 }
+
 body {
     background-color: var(--background);
     text-align: center;
@@ -28,7 +30,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin: 100px auto 0;
+    width: min(500px, calc(100% - 32px));
     max-width: 500px;
 }
 .details {
@@ -37,7 +40,7 @@ body {
 .stats-container {
     padding: 30px;
     border-radius: 20px;
-    border: 2px solid var(--pink);
+    border: 2px solid var(--dark-pink);
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -48,45 +51,135 @@ body {
     display: block;
     width: 100%;
     height: 10px;
-    background-color: beige ;
+    background-color: var(--pink) ;
     color: #84a282;
-    border: 2px solid #84a282;
+    border: 2px;
     border-radius: 10px;
     margin-top: 10px;
     overflow: hidden;
 
 }
-
+#progress {
+    width: 0;
+    height: 10px;
+    background-color: var(--dark-pink);
+    transition: width 0.3s ease;
+}
 
 #numbers {
-    width: 50px;
-    height: 50px;
-    background-color: var(--green);
+    width: 60px;
+    height: 60px;
+    background-color: var(--dark-pink);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 1.2rem;
+    font-family: 'Silkscreen', cursive;
+    color: white;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: var(--text);
+    color: var(--dark-pink);
+    font-family: 'Silkscreen', cursive;
 }
 
 #task-form {
-    background-color: #f6e2e9;
-    border: 1px solid #84a282;
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    background-color: var(--pink);
+    border: 1px solid var(--dark-pink);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
+    gap:10px;
+}
+input {
+    flex: 1;
+    padding: 10px;
+    background-color: var(--beige);
+    border: 1px solid var(--dark-pink);
+    border-radius: 10px;
+    color: gray;
+}
+
+#task-input:focus {
+    outline: 2px solid var(--dark-pink);
+    border-color: var(--dark-pink);
+}
+
+button {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--dark-pink);
+    color: var(--beige);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Silkscreen', cursive;
+    
+}
+
+#task-list {
+    width: 100%;
+    margin-top: 10px;
 }
 
 #task-list li {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
-    background-color: #b8cfb3;
-    padding: 20px;
+    background-color: var(--pink);
+    padding: 10px;
     border-radius: 5px;
+    font-family: 'Silkscreen', cursive;
+    color: var(--dark-pink);
+}
+
+#task-list li span {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+#task-list input[type="checkbox"] {
+    appearance: none;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: 1px solid var(--dark-pink);
+    border-radius: 4px;
+    background-color: var(--beige);
+}
+#task-list input[type="checkbox"]:checked {
+    background-color: var(--dark-pink);
+}
+#task-list li span.editing {
+    outline: 2px solid var(--dark-pink);
+    border-radius: 4px;
+    padding: 4px;
+    background-color: var(--beige);
+}
+
+.icon-button {
+    flex: 0 0 40px;
+    padding: 7px;
+    background-color: var(--beige);
+}
+
+.icon-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .completed {
@@ -97,12 +190,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-.progress-container {
-    border: 2px solid #84a282;
-    border-radius: 20px;
-    padding: 5px;
-    margin-bottom: 20px;
-}
+
+
 
 
 
